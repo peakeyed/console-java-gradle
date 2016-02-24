@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+group = 'com.codenvy.examples'
+version = '1.0-SNAPSHOT'
+description = """hello-app"""
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+jar {
+    manifest {
+        attributes 'Main-Class': 'org.eclipse.che.examples.HelloWorld'
+    }
+}
+repositories {
+    mavenCentral()                                                                        
+}                                                             
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
