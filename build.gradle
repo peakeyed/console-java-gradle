@@ -1,12 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'application'
 
 group = 'org.eclipse.che.examples'
 version = '1.0-SNAPSHOT'
 description = """hello-app"""
 
-sourceCompatibility = 1.5
-targetCompatibility = 1.5
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 jar {
     manifest {
@@ -20,6 +21,10 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
+
+application {
+    mainClassName = 'org.eclipse.che.examples.HelloWorld'
 }
 
 task createPom {
